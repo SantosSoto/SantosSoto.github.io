@@ -1,63 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercury study tool</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Login</title>
+  <style>
+    /* styling stuff */
+    body {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9acb, #b38cff, #8ec5fc);
+    }
 
-    <body>
-        <h1>
-            Chapter 1: Introduction to equations
-        </h1>
-        <p>
-            An equation is a math statement that shows the relationship between two expressions.
-        </p>
-        <h4>left side = right side</h4>
-        <hr>
-        <h4> for example: 5x = 2x + 5</h4>
-        <p>
-            In this case the equation has 5x on the left and 2x + 5 on the right. 
-            usually we want to solve for x. in this case in order to solve for x we need
-            to move all "x" terms to one side and all constants(numbers without an x) to the 
-            the other side. to move anything from one side to the other we need to change 
-            the sign of the term we are moving, in this case to move 2x to the left
-            we have to subtract 2x from both sides.
-        </p>
-        <h4>3x = 5</h4>
-        <p>
-            Now that we have all the x terms on one side and all constants on the other side
-            we can solve for x by dividing both sides by 3.
-        </p>
-        <h4>x = 5/3</h4>
-        <p>
-            Now that we found x, here are some other rules to remember when solving equations:
-            <ul>
-                <li>The equation that we had at the beginning can also be solved a different way
-                    <br>5x = 2x + 5
-                    <br> -5 = 2x - 5x
-                    <br>-5 = -3x dividing both negative sides creates a positive!
-                    <br>x = 5/3
-                </li>
-                <li>if you are solving for x you should always try to keep constants on one side while the variable on the other</li>
-                <li>Lastly remember to always combine like terms since the beginning, constants with constants and variables with variables</li>
-        </p>
-    </body>>
+    .login-box {
+      background: rgba(255,255,255,0.85);
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 320px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
 
+    h2 {
+      margin-top: 0;
+    }
 
+    input {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      margin-top: 0.7rem;
+      font-size: 0.9rem;
+    }
 
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 0.9rem;
+      background-color: #6b8bff;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
 
+    button:hover {
+      background-color: #5c7ae6;
+    }
 
+    #continueBtn {
+      margin-top: 0.5rem;
+      background-color: #4caf50;
+    }
 
+    .error {
+      color: #c92a2a;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      min-height: 1rem;
+    }
 
-
-
-
-
-
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    .hint {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+  </style>
 </head>
-<body>
 
-</body>
-</html>
+<div class="login-box">
+  <p>Enter username to start using: </p>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <div class="error" id="errorMsg"></div>
+  <button id="loginBtn">Log In</button>
+</div>
+
+
+<script src="accounts.js"></script>
+<script>
+  const loginBtn      = document.getElementById("loginBtn");
+  const usernameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+  const errorMsg      = document.getElementById("errorMsg");
+
+  /* after login go to main.html */
+  const FALLBACK_PAGE = "main.html";
+  loginBtn.addEventListener("click", () => {
+    const name = usernameInput.value.trim();
+    const pass = passwordInput.value;
+    errorMsg.textContent = "";
+    if (!name || !pass) {
+      errorMsg.textContent = "Please enter both username and password.";
+      return;
+    }
+
+    // check username and passwords for accounts
+    if (!ACCOUNTS[name] || ACCOUNTS[name] !== pass) {
+      errorMsg.textContent = "Incorrect username or password.";
+      return;
+    }
+    localStorage.setItem("username", name);
+    window.location.href = FALLBACK_PAGE;
+  });
+</script>
+

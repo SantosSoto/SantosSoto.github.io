@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Dashboard</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- sidebar stuff, same as all other sidebars -->
+  <aside class="sidebar">
+    <button id="toggleSidebar" class="toggle-btn">☰</button>
+    <h2>Subjects</h2>
+    <ul>
+      <li>Math
+        <ul>
+          <li><a href="multiply.html">Multiply</a></li>
+          <li><a href="divide.html">Divide</a></li>
+          <li><a href="exponents.html">Exp</a></li>
+          <li><a href="squareroot.html">Sqrt</a></li>
+          <li><a href="graphing_equation.html">Graph Eq</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+
+  <!--Main Content-->
+  <main class="main">
+    <header class="lesson-header">
+      <h1 id="welcomeTitle">Welcome back!</h1>
+      <p class="subtitle">Choose a lesson to get started.</p>
+    </header>
+
+    <section class="content-section">
+      <h2>Math lessons</h2>
+      <div class="lesson-cards">
+        <a href="multiply.html" class="lesson-card">
+          <h3>Multiply</h3>
+          <p>Practice repeated addition and multiplication facts.</p>
+        </a>
+        <a href="divide.html" class="lesson-card">
+          <h3>Divide</h3>
+          <p>Learn how to split things equally and understand remainders.</p>
+        </a>
+        <a href="exponents.html" class="lesson-card">
+          <h3>Exponents</h3>
+          <p>See what happens when you multiply the same number many times.</p>
+        </a>
+        <a href="squareroot.html" class="lesson-card">
+          <h3>Square roots</h3>
+          <p>Work backwards from squares to find roots.</p>
+        </a>
+        <a href="graphing_equation.html" class="lesson-card">
+          <h3>Graphing equations</h3>
+          <p>how equations work and how they look</p>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Continue</h2>
+      <button id="continueFromMain" class="primary-btn">
+        Continue where I left off
+      </button>
+    </section>
+
+    <footer class="footer">
+      <span class="footer-note">You’ve got this 💪</span>
+    </footer>
+  </main>
+
+  <!-- right panel same as the cotnent of html pages-->
+  <aside class="right-panel">
+    <div class="ai-box">
+      <h2>Today’s tip</h2>
+      <p>Pick one section and take a break so you can come back fresh</p>
+    </div>
+
+    <div class="extra-box">
+      <h3>Quick stats</h3>
+      <p>progress section with notes</p>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Page ID continue button for saved progress and neater UI -->
+<script>
+
+
+  // Personalize welcome
+  const username = localStorage.getItem("username");
+  const welcomeTitle = document.getElementById("welcomeTitle");
+  if (username && welcomeTitle) {
+    welcomeTitle.textContent = `Welcome back, ${username}!`;
+  }
+
+ // ids for pages
+  const continueBtn = document.getElementById("continueFromMain");
+  const lastPageId = localStorage.getItem("last_page");
+  const PAGE_MAP = {
+  multiply: "multiply.html",
+  divide: "divide.html",
+  exp: "exponents.html",
+  sqrt: "squareroot.html",
+  graph: "graphing_equation.html",
+  main: "main.html"
+};
+
+// checks for last page and continues
+  if (continueBtn) {
+    if (lastPageId && PAGE_MAP[lastPageId]) {
+      continueBtn.addEventListener("click", () => {
+        window.location.href = PAGE_MAP[lastPageId];
+      });
+    } else {
+      continueBtn.disabled = true;
+      continueBtn.textContent = "No saved progress yet";
+    }
+  }
+</script>
+
+<script>
+  //page id for main
+  const PAGE_ID = "main";
+</script>
+<script src="main.js"></script>
+
+
+</body>
+</html>

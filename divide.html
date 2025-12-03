@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Helper</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+    <body>
+        <div class="container">
+            <!-- Sidebar content menu items! *******************-->
+            <aside class="sidebar">
+            <button id="toggleSidebar" class="toggle-btn">☰</button>
+            <h2>Subjects</h2>
+            <ul>
+            <li>Math
+                <ul>
+                    <li><a href="multiply.html">Multiply</a></li>
+                    <li><a href="divide.html">Divide</a></li>
+                    <li><a href="exponents.html">Exp</a></li>
+                    <li><a href="squareroot.html">Sqrt</a></li>
+                    <li><a href="graphing_equation.html">Graph Eq</a></li>
+                </ul>
+            </li>
+            </ul>
+        </aside>
+
+    <!-- Main content!***********************-->
+    <main class="main">
+      <header class="lesson-header">
+        <h1>Lesson 1: Division</h1>
+      </header>
+
+      <section class="video-section">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/ZB7DaisGWDE?si=Tg3TDXwuCCee8JIm"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h1>Chapter 1: introduction to Division</h1>
+        <p>
+          in this chapter we will learn how division works <strong>8/2 = 4</strong>.
+          division is the process of splitting a number into equal parts or groups.
+        </p>
+        <p>
+          Let's talk about an example: <code> 10 / 2 = 5</code>.  
+          This means that 10 is being divided into 2 equal parts, and each part is 5. another example is <code> 20 / 4 = 5</code>.  
+          This means that 20 is being divided into 4 equal parts, and each part is 5.
+        </p>
+        <h2>Notes to remember:</h2>
+        <p>
+          - Division is the opposite of multiplication.<br />
+          - The number being divided is called the dividend.<br />
+          - The number you are dividing by is called the divisor.<br />
+          - The result of a division problem is called the quotient. <br />
+          <code> dividend / divisor = quotient </code>
+        </p>
+      </section>
+
+      <section class="quiz-section">
+        <h2>Quick Check</h2>
+        <p>what is: <code>15 / 5</code>?</p>
+
+        <div class="quiz-options">
+          <button class="quiz-option" data-correct="false">15</button>
+          <button class="quiz-option" data-correct="false">10</button>
+          <button class="quiz-option" data-correct="false">5</button>
+          <button class="quiz-option" data-correct="true">3</button>
+        </div>
+
+        <p id="quiz-feedback" class="quiz-feedback"></p>
+      </section>
+
+
+      <footer class="footer">
+        <div class="progress-container">
+          <label>Progress:</label>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
+        <div class="footer-note">Good luck!</div>
+      </footer>
+    </main>
+
+    <!-- Right Panel -->
+<aside class="right-panel">
+  <div class="ai-box">
+    <h2>AI Companion</h2>
+    <p>(Coming soon)</p>
+  </div>
+
+  <div class="extra-box">
+    <div class="progress-tasks">
+      <h3>Lesson checklist</h3>
+
+      <label class="task-item">
+        <input type="checkbox" class="task-checkbox">
+        Watched the video
+      </label>
+
+      <label class="task-item">
+        <input type="checkbox" class="task-checkbox">
+        Read the notes
+      </label>
+
+      <label class="task-item">
+        <input type="checkbox" class="task-checkbox">
+        Finished the quiz
+      </label>
+
+      <label class="task-item">
+        <input type="checkbox" class="task-checkbox">
+        Added my own notes
+      </label>
+    </div>
+
+    <div class="notes-box">
+      <h3>My notes</h3>
+      <textarea
+        class="notes-textarea"
+        placeholder="Write anything you learned from this lesson..."
+      ></textarea>
+    </div>
+  </div>
+</aside>
+
+
+  <script>
+  const PAGE_ID = "divide";
+</script>
+<script src="main.js"></script>
+
+</body>
+</html>

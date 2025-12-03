@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Helper</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar content menu items! *******************-->
+    <aside class="sidebar">
+      <button id="toggleSidebar" class="toggle-btn">☰</button>
+      <h2>Subjects</h2>
+      <li>Math
+                <ul>
+                    <li><a href="multiply.html">Multiply</a></li>
+                    <li><a href="divide.html">Divide</a></li>
+                    <li><a href="exponents.html">Exp</a></li>
+                    <li><a href="squareroot.html">Sqrt</a></li>
+                    <li><a href="graphing_equation.html">Graph Eq</a></li>
+                </ul>
+            </li>
+      </ul>
+    </aside>
+
+    <!-- Main content!***********************-->
+    <main class="main">
+      <header class="lesson-header">
+        <h1>Lesson 1: Graphing</h1>
+      </header>
+
+      <section class="video-section">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/ZB7DaisGWDE?si=Tg3TDXwuCCee8JIm"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h1>Chapter 2: Introduction to Graphing Equations</h1>
+        <p>
+          Last chapter we learned about equations and how to solve for <strong>x</strong>.
+          This chapter we will learn how to graph an equation.
+            Graphing an equation means to plot all the points on a coordinate plane and connect them to form lines, curves, and many other shapes.
+        </p>
+        <p>
+          Let's talk about an example: <code>y = 2x + 3</code>.  
+          This equation is in <strong>slope-intercept form</strong>, which means that the number 2 is the slope and the number 3 is the y-intercept.
+          To plot this into a graph, we first start at the y-intercept (3).
+          Then to do the slope, you need to understand <em>rise over run</em> — how much the line goes up or down over how much it goes left or right.
+          Since the slope is 2, that means the line goes up 2 for every 1 it goes to the right.
+          Think about it this way:
+        </p>
+        <h2>2 = 2/1 = 2 rise / 1 run</h2>
+        <p>
+          You can continue plotting a few points following that pattern, draw a straight line through them, and you’ll have your graph of the equation!
+        </p>
+      </section>
+
+      <section class="quiz-section">
+        <h2>Quick Check</h2>
+        <p>What is the slope in the equation <code>y = 2x + 3</code>?</p>
+
+        <div class="quiz-options">
+          <button class="quiz-option" data-correct="false">3</button>
+          <button class="quiz-option" data-correct="true">2</button>
+          <button class="quiz-option" data-correct="false">2x</button>
+          <button class="quiz-option" data-correct="false">2/3</button>
+        </div>
+
+        <p id="quiz-feedback" class="quiz-feedback"></p>
+      </section>
+
+
+      <footer class="footer">
+        <div class="progress-container">
+          <label>Progress:</label>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
+        <div class="footer-note">some saying something filled something</div>
+      </footer>
+    </main>
+
+    <!-- Right Panel -->
+<aside class="right-panel">
+  <div class="ai-box">
+    <h2>AI Companion</h2>
+    <p>(Coming soon)</p>
+  </div>
+
+  <div class="extra-box">
+    <div class="progress-tasks">
+      <h3>Lesson checklist</h3>
+
+      <label class="task-item">
+        <input type="checkbox" class="task-checkbox">
+        Watched the video
+      </label>
+
+      <label class="task-item">
+        <input type="checkbox" class="task-checkbox">
+        Read the notes
+      </label>
+
+      <label class="task-item">
+        <input type="checkbox" class="task-checkbox">
+        Finished the quiz
+      </label>
+
+      <label class="task-item">
+        <input type="checkbox" class="task-checkbox">
+        Added my own notes
+      </label>
+    </div>
+
+    <div class="notes-box">
+      <h3>My notes</h3>
+      <textarea
+        class="notes-textarea"
+        placeholder="Write anything you learned from this lesson..."
+      ></textarea>
+    </div>
+  </div>
+</aside>
+
+<script>
+  const PAGE_ID = "graph";
+</script>
+<script src="main.js"></script>
+
+  
+</body>
+</html>
